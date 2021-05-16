@@ -6,6 +6,9 @@ public class playerMove : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
+    
+    float initX;
+    float initY;
 
     private Rigidbody2D rigidbody2D;
     private Animator animator;
@@ -25,6 +28,8 @@ public class playerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initX = transform.position.x;
+        initY = transform.position.y;
         health = hearts.Length;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -115,5 +120,11 @@ public class playerMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void recolocar()
+    {
+        transform.position = new Vector3(initX, initY, 0);
+        Hit();
     }
 }
