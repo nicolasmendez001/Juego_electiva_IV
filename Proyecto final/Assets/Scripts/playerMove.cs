@@ -15,7 +15,8 @@ public class playerMove : MonoBehaviour
     public GameObject bulledPrefab;
 
     private float lastShoot;
-    private int health = 5;
+    private int health;
+    public GameObject [] hearts;
 
     public float fallMultiplier = 0.5f;
 
@@ -24,6 +25,7 @@ public class playerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = hearts.Length;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -53,7 +55,7 @@ public class playerMove : MonoBehaviour
         // {
         //     grounded = false;
         // }
-        Debug.Log("entra " + CheckGround.isGrounded);
+       // Debug.Log("entra " + CheckGround.isGrounded);
         if (Input.GetKeyDown(KeyCode.Space) && CheckGround.isGrounded)
         {
             jump();
@@ -64,6 +66,7 @@ public class playerMove : MonoBehaviour
             shoot();
             lastShoot = Time.time;
         }
+
     }
 
     private void shoot()
@@ -102,8 +105,13 @@ public class playerMove : MonoBehaviour
 
     public void Hit()
     {
-        health = health - 1;
-        if (health == 0)
+        if(health > 0)
+        {
+            Debug.Log("enta a hit");
+            health = health - 1;
+            Destroy(hearts[health].gameObject);
+        }
+        else
         {
             Destroy(gameObject);
         }
