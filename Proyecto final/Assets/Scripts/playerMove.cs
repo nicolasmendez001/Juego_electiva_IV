@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMove : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class playerMove : MonoBehaviour
     public float fallMultiplier = 0.5f;
 
     public float lowJumpMultiplier = 0.5f;
+
+    public Text textEnemys;
+    private int count = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -120,6 +124,13 @@ public class playerMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void setText()
+    {
+        count++;
+        textEnemys.text = "Enemigos abatidos: " + count;
+        Debug.Log(textEnemys);
     }
 
     public void recolocar()

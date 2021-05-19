@@ -8,6 +8,7 @@ public class enemyScript : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject player;
 
+
     private float lastShoot;
 
     public float speed;
@@ -73,17 +74,16 @@ public class enemyScript : MonoBehaviour
 
     public void Hit()
     {
+        Debug.Log("vida: " + health);
         if(health > 0)
         {
             Debug.Log("entra a hit");
             health = health - 1;
-            if(health == 0) {
+            if (health == 0) {
+
+                player.GetComponent<playerMove>().setText();
                 Destroy(gameObject);
             }
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 }
