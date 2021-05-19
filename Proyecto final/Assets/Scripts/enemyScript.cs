@@ -8,18 +8,16 @@ public class enemyScript : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject player;
 
-
-    private float lastShoot;
+    public float lastShoot;
 
     public float speed;
     public Rigidbody2D rigidbody2d;
 
-    public int health;
+    public int health = 2;
 
-    void start()
-    {
-        health = 2;
-    }
+    public bool normal = true;
+
+    private float walk = -1f;
     
     void Update()
     {
@@ -28,22 +26,21 @@ public class enemyScript : MonoBehaviour
             return ;
         }
         Vector3 direction = transform.position - player.transform.position;
-        if (direction.x >= 0.0f)
-        {
-            transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
-        } else
-        {
-            transform.localScale = new Vector3(-3.0f, 3.0f, 3.0f);
-        }
-
         float distance = Mathf.Abs(player.transform.position.x - transform.position.x);
-
-        // if (distance < 0.1f)
-        // {
-        //     Shoot();
-        // }
-
-        Vector2 newPosition = Vector2.MoveTowards(rigidbody2d.position, new Vector2(player.transform.position.x, rigidbody2d.position.y), speed * Time.deltaTime);
+        Vector2 newPosition;
+        if (distance < 5f && normal != true)
+        {
+            if (direction.x >= 0.0f)
+            {
+                transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+            } else
+            {
+                transform.localScale = new Vector3(-3.0f, 3.0f, 3.0f);
+            }
+            newPosition = Vector2.MoveTowards(rigidbody2d.position, new Vector2(player.transform.position.x, rigidbody2d.position.y), speed * Time.deltaTime);
+        } else {
+            newPosition = Vector2.MoveTowards(rigidbody2d.position, new Vector2(transform.position.x + walk, rigidbody2d.position.y), speed * Time.deltaTime);
+        }
         rigidbody2d.MovePosition(newPosition);
     }
 
@@ -69,6 +66,18 @@ public class enemyScript : MonoBehaviour
         if (player != null)
         {
             player.Hit();
+        } else {
+            Vector3 collPosition = collision.transform.position;
+            if (collPosition.x > transform.position.x)
+            {
+                walk = 1f;
+                transform.localScale = new Vector3(-3.0f, 3.0f, 3.0f);
+            } 
+            else 
+            {
+                walk = -1f;
+                transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+            }
         }
     }
 
