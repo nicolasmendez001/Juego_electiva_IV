@@ -22,9 +22,23 @@ public class bulletScript : MonoBehaviour
         this.direction = direction;
     }
 
-    public void destroyBullet()
+    // public void destroyBullet()
+    // {
+    //     Destroy(gameObject);
+    // }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        enemyScript enemy = collision.collider.GetComponent<enemyScript>();
+        playerMove player = collision.collider.GetComponent<playerMove>();
+        if (player == null)
+        {
+            Destroy(gameObject);
+        }
+        if (enemy != null)
+        {
+            enemy.Hit();
+        }
     }
 
 }

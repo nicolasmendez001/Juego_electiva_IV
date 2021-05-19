@@ -12,6 +12,13 @@ public class enemyScript : MonoBehaviour
 
     public float speed;
     public Rigidbody2D rigidbody2d;
+
+    public int health;
+
+    void start()
+    {
+        health = 2;
+    }
     
     void Update()
     {
@@ -61,6 +68,22 @@ public class enemyScript : MonoBehaviour
         if (player != null)
         {
             player.Hit();
+        }
+    }
+
+    public void Hit()
+    {
+        if(health > 0)
+        {
+            Debug.Log("entra a hit");
+            health = health - 1;
+            if(health == 0) {
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }
