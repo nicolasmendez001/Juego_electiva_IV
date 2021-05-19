@@ -29,7 +29,10 @@ public class Pausar : MonoBehaviour
 
     public void salir()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Application.Quit();
+        active = !active;
+        canvas.enabled = active;
+        Time.timeScale = (active) ? 0 : 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+      //  Application.Quit();
     }
 }

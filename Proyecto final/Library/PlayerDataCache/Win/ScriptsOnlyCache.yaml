@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - ColisionInferior
     - MenuPrincipal
     - Pausar
+    - TimedSpawn
     - Wait
     - bulletScript
     - enemyScript
@@ -64,23 +65,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11290}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11636}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 12310}
+      Script: {instanceID: 11846}
     - Class: 114
-      Script: {instanceID: 13028}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13238}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13592}
     - Class: 114
-      Script: {instanceID: 13716}
+      Script: {instanceID: 13874}
     - Class: 114
-      Script: {instanceID: 13820}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 14460}
+      Script: {instanceID: 14028}
+    - Class: 114
+      Script: {instanceID: 14668}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -117,25 +120,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11290}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11398}
+      Script: {instanceID: 11608}
     - Class: 114
-      Script: {instanceID: 12310}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 12364}
+      Script: {instanceID: 12574}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13592}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13612}
     - Class: 114
-      Script: {instanceID: 13820}
+      Script: {instanceID: 14028}
     - Class: 114
-      Script: {instanceID: 14114}
+      Script: {instanceID: 14322}
     - Class: 114
-      Script: {instanceID: 14290}
+      Script: {instanceID: 14498}
     - Class: 114
-      Script: {instanceID: 14460}
+      Script: {instanceID: 14668}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -194,37 +197,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 616}
     - Class: 114
-      Script: {instanceID: 11290}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 11790}
     - Class: 114
-      Script: {instanceID: 11636}
+      Script: {instanceID: 11846}
     - Class: 114
-      Script: {instanceID: 11734}
+      Script: {instanceID: 11944}
     - Class: 114
-      Script: {instanceID: 12230}
+      Script: {instanceID: 12440}
     - Class: 114
-      Script: {instanceID: 12310}
+      Script: {instanceID: 12520}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12714}
     - Class: 114
-      Script: {instanceID: 12878}
+      Script: {instanceID: 13088}
     - Class: 114
-      Script: {instanceID: 13028}
+      Script: {instanceID: 13238}
     - Class: 114
-      Script: {instanceID: 13276}
+      Script: {instanceID: 13486}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13592}
     - Class: 114
-      Script: {instanceID: 13716}
+      Script: {instanceID: 13924}
     - Class: 114
-      Script: {instanceID: 13820}
+      Script: {instanceID: 14028}
     - Class: 114
-      Script: {instanceID: 14288}
+      Script: {instanceID: 14496}
     - Class: 114
-      Script: {instanceID: 14460}
+      Script: {instanceID: 14668}
     - Class: 114
-      Script: {instanceID: 14482}
+      Script: {instanceID: 14690}
+    - Class: 114
+      Script: {instanceID: 17142}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -962,7 +967,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 2b828e3d446decd15bcb821b385994ca
+      Hash: c70362add8625cfc7930845cadf59e32
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: enemyScript
@@ -990,9 +995,15 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 69f0edd47837e60b0df6fe8ee2e59d31
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimedSpawn
   platform: 5
   scenePathNames:
   - Assets/Scenes/Intro.unity
   - Assets/Menu/Menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Documentos/juego/Proyecto final.exe
+  playerPath: D:/Desktop/10mo semestre/electiva IV/juego_final/Proyecto final.exe

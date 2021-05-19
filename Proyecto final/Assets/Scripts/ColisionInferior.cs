@@ -18,6 +18,16 @@ public class ColisionInferior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FindObjectOfType<playerMove>().SendMessage("recolocar");
+        playerMove player = collision.GetComponent<playerMove>();
+        if (player != null)
+        {
+            FindObjectOfType<playerMove>().SendMessage("recolocar");
+        }
+
+        enemyScript enemy = collision.GetComponent<enemyScript>();
+        if (enemy != null)
+        {
+            Destroy(enemy);
+        }
     }
 }
